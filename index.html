@@ -1,1 +1,47 @@
-﻿<h1>Hello World</h1>
+﻿<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testpage</title>
+<style>
+#uhr {
+  font-size: 3em;
+  margin: 1em auto;
+}  
+</style>  
+<script>
+'use strict';  
+(function () {
+  function uhrzeit() {
+    var jetzt = new Date(),
+        h = jetzt.getHours(),
+        m = jetzt.getMinutes(),
+        s = jetzt.getSeconds();
+    m = fuehrendeNull(m);
+    s = fuehrendeNull(s);
+    document.getElementById('uhr').innerHTML = h + ':' + m + ':' + s;
+    setTimeout(uhrzeit, 500);
+  }
+  
+  function fuehrendeNull(zahl) {
+    zahl = (zahl < 10 ? '0' : '' )+ zahl;  
+    return zahl;
+  }
+ 
+  document.addEventListener('DOMContentLoaded',uhrzeit);
+}());
+</script>
+
+</head>
+ 
+<body>
+<h1>Hello World!</h1>
+
+<main>
+
+  <p id="uhr"></p>
+
+</main>
+</body>
+</html>
