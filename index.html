@@ -9,11 +9,19 @@
   font-size: 6em;
   font-family: Arial, Helvetica, sans-serif;
   color: #2A75A8;
+  margin-top: 1em;
 }
 #date {
   font-size: 3em;
   font-family: Arial, Helvetica, sans-serif;
   color: #2A2A2A;
+}
+
+#runtxt {
+  font-size: 3em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #8A8A8A;
+  margin-top: 1em;
 }
 </style>  
 <script>
@@ -52,10 +60,9 @@
   <div id="uhr" align="center"></div>
   <div id="date" align="center"></div>
 
-  <div align="center">
-  <script type="text/javascript">document.write("<iframe id = \"widget\" width=\"600\" height=\"140\" src=\"https://www.wetter.at/wetter/oesterreich/steiermark/seggauberg-leibnitz/widget/w600/color-hellblau?utm_source=widget&utm_medium="+top.location.hostname+"&utm_content="+top.location.href+"&utm_campaign=Wetter%2BWidget\" frameborder=\"0\" scrolling=\"no\"></iframe>");</script>
-   </div>
-   
+  <div id="runtxt" align="center">
+    <marquee scrollamount="5" scrolldelay="5">Dieser Text wird ziemlich schnell bewegt...</marquee>
+  </div>
 </main>
 </body>
 </html>
