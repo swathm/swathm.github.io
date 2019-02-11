@@ -6,9 +6,16 @@
   <title>Testpage</title>
 <style>
 #uhr {
+  font-size: 6em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2A75A8;
+}
+#date {
   font-size: 3em;
-  margin: 1em auto;
-}  
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2A2A2A;
+  margin: 0.2em;
+}
 </style>  
 <script>
 'use strict';  
@@ -17,10 +24,16 @@
     var jetzt = new Date(),
         h = jetzt.getHours(),
         m = jetzt.getMinutes(),
-        s = jetzt.getSeconds();
+        s = jetzt.getSeconds(),
+        d = jetzt.getDate(),
+        mo = jetzt.getMonth() + 1,
+        y = jetzt.getFullYear();
     m = fuehrendeNull(m);
     s = fuehrendeNull(s);
+    d = fuehrendeNull(d);
+    mo = fuehrendeNull(mo);
     document.getElementById('uhr').innerHTML = h + ':' + m + ':' + s;
+    document.getElementById('date').innerHTML = d + '.' + mo + '.' + y;
     setTimeout(uhrzeit, 500);
   }
   
@@ -32,16 +45,18 @@
   document.addEventListener('DOMContentLoaded',uhrzeit);
 }());
 </script>
-
 </head>
- 
 <body>
-<h1>Hello World!</h1>
 
 <main>
 
-  <p id="uhr"></p>
+  <div id="uhr" align="center"></div>
+  <div id="date" align="center"></div>
 
+  <div align="center">
+  <script type="text/javascript">document.write("<iframe id = \"widget\" width=\"600\" height=\"140\" src=\"https://www.wetter.at/wetter/oesterreich/steiermark/seggauberg-leibnitz/widget/w600/color-hellblau?utm_source=widget&utm_medium="+top.location.hostname+"&utm_content="+top.location.href+"&utm_campaign=Wetter%2BWidget\" frameborder=\"0\" scrolling=\"no\"></iframe>");</script>
+   </div>
+   
 </main>
 </body>
 </html>
